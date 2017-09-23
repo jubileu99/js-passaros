@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Game javascript</title>
+	</head>
+	<style>
+		#p1 {
+			width: 100px;
+			height: 100px;
+			
+		}
+		body{
+			background-color: aqua;
+		}
+	</style>
+	<script>
+		function voa(d){
+			var step = 50;
+			var tecla = d.which;
+			var altura = screen.height;
+			var largura = screen.width;
+			var imagem = document.getElementById("p1");
+			
+			switch(tecla){
+				case 50:
+					var x = imagem.offsetTop;
+					x = x + step;
+					imagem.style.marginTop = parseInt(x) + "px";
+					break;
+				case 56:
+					var x = imagem.offsetTop;
+					x = x - step;
+					imagem.style.marginTop = parseInt(x) + "px";
+					break;
+				case 54:
+					var x = imagem.offsetLeft;
+					x = x + step;
+					imagem.style.marginLeft = parseInt(x) + "px";
+					break;
+				case 52:
+					var x = imagem.offsetLeft;
+					x = x - step;
+					imagem.style.marginLeft = parseInt(x) + "px";
+					break;
+			}
+			
+		}
+	</script>
+	<body onkeypress="voa(event)">
+		<div id="p1">
+			<img src="passarinho.gif" alt="" height="100px" width="100px">
+		</div>
+	</body>
+	
+</html>
